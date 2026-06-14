@@ -1,0 +1,285 @@
+{
+  "global": {
+    "instructions_to_main_agent": [
+      "Implement a single-page React application (frontend only).",
+      "Use a fixed Top Switcher UI to toggle between the 5 defined design variants.",
+      "Store the active variant in React state. Apply the variant's design tokens to the UI (e.g., swapping CSS classes for typography, spacing, border radiuses).",
+      "Use the exact content provided in 'content_requirements'.",
+      "Use Fontshare CDN for fonts like Cabinet Grotesk, Satoshi, Clash Display, and Google Fonts for others.",
+      "All interactive elements must include a data-testid attribute in kebab-case.",
+      "Never use placeholder images. Use only the URLs provided in 'media'."
+    ],
+    "media": {
+      "headshot_url": "https://akanshajain.dev/headshot.png",
+      "featured_talk_url": "https://akanshajain.dev/speakng.jpg",
+      "speaker_of_the_day_url": "https://akanshajain.dev/speaker_of_the_day_sessionize.png"
+    },
+    "content_requirements": {
+      "hero": {
+        "name": "Akansha Jain",
+        "tagline": "Engineering code. Inspiring communities.",
+        "greetings": "Hello / नमस्ते / Hola / Bonjour / Hallo / こんにちは / Olá / 안녕하세요 / Ciao / สวัสดี / سلام / 你好",
+        "subtitle": "International conference speaker with 54+ talks across Europe and Asia. Google Women Techmakers Ambassador building the next generation of mobile developers.",
+        "cta": "Invite Me to Speak"
+      },
+      "marquee": [
+        "Google Women Techmakers", "A.P. Moller – Maersk", "Flutter Conf India", "Flutter Vikings Oslo", "FlutterNinjas Tokyo", "GDG London", "Google DevFest", "FOSS United", "Google I/O", "Flutter Forward"
+      ],
+      "selected_talks": [
+        {"id": "01", "title": "Offline Mode, Online Impact", "subtitle": "International Conference ◆ FlutterNinjas — Tokyo, Japan", "year": "2025", "level": "Advanced"},
+        {"id": "02", "title": "Importance of Community & Leadership", "subtitle": "International Conference ◆ Flutter Vikings — Oslo, Norway", "year": "2022", "level": "General"},
+        {"id": "03", "title": "Agentic Flutter Apps with Firebase AI Logic", "subtitle": "Conference ◆ DevFest Jalandhar 2025", "year": "2025", "level": "Advanced"},
+        {"id": "04", "title": "Flutter DevCamp", "subtitle": "International Workshop ◆ GDG London, United Kingdom", "year": "2024", "level": "Advanced"},
+        {"id": "05", "title": "Hack the Future with Flutter: Building MVPs Fast", "subtitle": "Community Talk ◆ GDG SRCASW", "year": "2026", "level": "Advanced"}
+      ],
+      "featured_talk": {
+        "title": "Offline Mode, Online Impact",
+        "subtitle": "Building offline-first Flutter applications with practical patterns for resilient, production-grade mobile experiences — live from FlutterNinjas in Tokyo, Japan.",
+        "location": "Tokyo Japan",
+        "year": "2025",
+        "level": "Advanced"
+      },
+      "timeline": [
+        {"year": "2021", "title": "The Beginning", "description": "Discovered Flutter through a GDSC orientation. Founded techtAKe.", "badges": ["GDSC Lead", "Gold MLSA", "IEEE Published"]},
+        {"year": "2022", "title": "Going International", "description": "Spoke at Flutter Vikings in Oslo. Won Best Student Award.", "badges": ["Flutter Vikings", "Flutter Conf India", "DevFest Goa"]},
+        {"year": "2023", "title": "Enterprise & Scale", "description": "Became Google WTM Ambassador. Delivered corporate talks at Maersk.", "badges": ["WTM Ambassador", "Maersk", "GDG London"]},
+        {"year": "2024", "title": "Scaling Impact", "description": "Invited to Google I/O. Joined Fluttercon India Programme Committee.", "badges": ["Google I/O", "Fluttercon Committee"]},
+        {"year": "2025", "title": "New Horizons", "description": "Spoke at FlutterNinjas Tokyo and Fluttercon India.", "badges": ["Tokyo", "Fluttercon India"]},
+        {"year": "2026", "title": "Onwards & Upwards", "description": "Named Sessionize Speaker of the Day.", "badges": ["Speaker of the Day", "HackNagpur"]}
+      ],
+      "archive_grid": {
+        "tabs": ["All", "International", "Conference", "Corporate", "Workshop", "Community"],
+        "count_text": "54+ talks",
+        "visible_count": 8,
+        "load_more": "Load More"
+      },
+      "stats": [
+        {"value": "54+", "label": "Talks & Workshops"},
+        {"value": "12+", "label": "Cities, 4 Countries"},
+        {"value": "28K+", "label": "Attendees Reached"},
+        {"value": "21+", "label": "Events Organized"},
+        {"value": "8+", "label": "Hackathons Mentored"},
+        {"value": "105K+", "label": "Community Reach"}
+      ],
+      "topics": ["Flutter & Dart", "Mobile App Architecture", "Firebase & Flutter", "State Management (BLoC)", "Cross-Platform Development", "App Size Optimization", "Offline-First Patterns", "UI/UX & Animations", "Platform Channels", "FlutterFlow", "AI in Mobile Apps", "Community Building & Leadership"],
+      "codelabs": [
+        {"title": "On-Device AI with Flutter & Gemma", "tags": ["Flutter", "Gemma 3n", "Intermediate"]},
+        {"title": "Building Generative Interfaces with Flutter's GenUI SDK", "tags": ["Flutter", "GenUI SDK", "A2UI"]}
+      ],
+      "leadership": {
+        "featured": {
+          "title": "Speaker of the Day",
+          "date": "Sessionize • February 27, 2026",
+          "description": "Featured by Sessionize as Speaker of the Day, recognizing impactful contributions across 6 events and 6 sessions on the global speaking circuit."
+        },
+        "items": [
+          {"role": "Women Techmakers Ambassador", "org": "Google", "duration": "Since 2023"},
+          {"role": "Gold Learn Student Ambassador", "org": "Microsoft", "duration": "2021 – 2022"},
+          {"role": "Co-Organizer", "org": "Flutter Conf India", "duration": "Since 2022"},
+          {"role": "Co-Organizer", "org": "Flutter Delhi", "duration": "Since 2023"},
+          {"role": "Programme Committee", "org": "Fluttercon India 2025", "duration": "2025"},
+          {"role": "GDSC Lead", "org": "Google Developer Student Clubs", "duration": "2021 – 2022"},
+          {"role": "Featured Contributor", "org": "Google Developers", "duration": "Recognition"},
+          {"role": "Developer Group Lead", "org": "FlutterFlow • New Delhi", "duration": "Since 2024"}
+        ]
+      },
+      "get_in_touch": {
+        "text": "Looking for a speaker who brings deep technical expertise, engaging delivery, and genuine passion for developer communities?",
+        "cta_1": "Invite via Sessionize",
+        "cta_2": "Connect on LinkedIn"
+      }
+    }
+  },
+  "variants": [
+    {
+      "id": "variant-1",
+      "name": "Editorial Magazine",
+      "theme": "light",
+      "archetype": "Organic & Earthy",
+      "design_tokens": {
+        "colors": {
+          "background": "bg-[#FDFBF7]",
+          "text": "text-[#1A2F24]",
+          "text_muted": "text-[#5C6B62]",
+          "primary": "bg-[#9A3B26] text-white",
+          "border": "border-[#E1DCD1]",
+          "accent": "text-[#9A3B26]"
+        },
+        "typography": {
+          "font_family_heading": "font-serif",
+          "font_family_body": "font-sans",
+          "fonts_to_import": "Cormorant Garamond, Outfit",
+          "h1": "text-5xl md:text-7xl tracking-tighter leading-none font-light",
+          "h2": "text-4xl md:text-5xl tracking-tight leading-tight",
+          "h3": "text-2xl md:text-3xl font-medium",
+          "body": "text-base md:text-lg leading-relaxed",
+          "uppercase_label": "text-xs tracking-[0.2em] uppercase"
+        },
+        "layout": {
+          "spacing": "gap-12 md:gap-24",
+          "padding": "py-24",
+          "card": "bg-transparent border-t border-[#E1DCD1] pt-6 pb-12 rounded-none",
+          "image_radius": "rounded-full md:rounded-[10rem]",
+          "button": "rounded-full px-8 py-4 border border-[#1A2F24] hover:bg-[#1A2F24] hover:text-[#FDFBF7] transition-all"
+        },
+        "components": {
+          "marquee": "Slow speed, serif font, huge gaps, text-[#5C6B62]",
+          "timeline": "Central thin line, alternating left/right elegant text blocks",
+          "stats": "No grid boxes, just massive serif numbers with tiny sans-serif labels below, spaced widely"
+        }
+      }
+    },
+    {
+      "id": "variant-2",
+      "name": "Code Brutalism",
+      "theme": "dark",
+      "archetype": "Swiss & High-Contrast (Terminal)",
+      "design_tokens": {
+        "colors": {
+          "background": "bg-[#050505]",
+          "text": "text-[#E0E0E0]",
+          "text_muted": "text-[#888888]",
+          "primary": "bg-[#00FF41] text-[#050505]",
+          "border": "border-[#333333]",
+          "accent": "text-[#FFB000]"
+        },
+        "typography": {
+          "font_family_heading": "font-mono",
+          "font_family_body": "font-mono",
+          "fonts_to_import": "JetBrains Mono",
+          "h1": "text-4xl md:text-6xl tracking-tight uppercase font-bold",
+          "h2": "text-3xl md:text-4xl tracking-tight uppercase",
+          "h3": "text-xl md:text-2xl font-bold",
+          "body": "text-sm md:text-base leading-relaxed",
+          "uppercase_label": "text-xs tracking-wider uppercase text-[#00FF41]"
+        },
+        "layout": {
+          "spacing": "gap-4 md:gap-8",
+          "padding": "py-16",
+          "card": "bg-[#0A0A0A] border border-[#333333] p-6 rounded-none hover:border-[#00FF41] transition-colors",
+          "image_radius": "rounded-none grayscale hover:grayscale-0 transition-all",
+          "button": "rounded-none px-6 py-3 bg-[#050505] border-2 border-[#00FF41] text-[#00FF41] hover:bg-[#00FF41] hover:text-[#050505] font-bold uppercase transition-all"
+        },
+        "components": {
+          "marquee": "Fast speed, uppercase mono, repeating > prefix, text-[#00FF41]",
+          "timeline": "Left-aligned glowing border, rigid blocky dates like system logs",
+          "stats": "Dense bento grid, exposed borders (border-collapse style), bright neon numbers"
+        }
+      }
+    },
+    {
+      "id": "variant-3",
+      "name": "Dark Luxury",
+      "theme": "dark",
+      "archetype": "Luxury",
+      "design_tokens": {
+        "colors": {
+          "background": "bg-[#0B0C10]",
+          "text": "text-[#F8F8F8]",
+          "text_muted": "text-[#A0A0B0]",
+          "primary": "bg-[#D4AF37] text-[#0B0C10]",
+          "border": "border-white/10",
+          "accent": "text-[#D4AF37]"
+        },
+        "typography": {
+          "font_family_heading": "font-serif",
+          "font_family_body": "font-sans",
+          "fonts_to_import": "Playfair Display, Manrope",
+          "h1": "text-5xl md:text-7xl tracking-normal leading-tight font-medium",
+          "h2": "text-4xl md:text-5xl tracking-normal",
+          "h3": "text-2xl md:text-3xl",
+          "body": "text-base md:text-lg font-light leading-relaxed text-[#D0D0E0]",
+          "uppercase_label": "text-xs tracking-[0.25em] uppercase text-[#D4AF37]"
+        },
+        "layout": {
+          "spacing": "gap-16 md:gap-32",
+          "padding": "py-32",
+          "card": "bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.4)]",
+          "image_radius": "rounded-2xl",
+          "button": "rounded-full px-8 py-4 bg-white/10 border border-white/20 backdrop-blur-md hover:bg-white/20 transition-all text-[#F8F8F8]"
+        },
+        "components": {
+          "marquee": "Medium speed, elegant sans-serif, high opacity glow effect",
+          "timeline": "Soft glowing central nodes, glassmorphism cards for each milestone",
+          "stats": "Glassmorphic bento cards, metallic gold accents for numbers, deep shadows"
+        }
+      }
+    },
+    {
+      "id": "variant-4",
+      "name": "Playful Creative",
+      "theme": "light",
+      "archetype": "Vibrant Play",
+      "design_tokens": {
+        "colors": {
+          "background": "bg-[#F4F0EA]",
+          "text": "text-[#111111]",
+          "text_muted": "text-[#444444]",
+          "primary": "bg-[#0047FF] text-white",
+          "border": "border-[#111111]",
+          "accent": "text-[#FF4A8D]"
+        },
+        "typography": {
+          "font_family_heading": "font-sans",
+          "font_family_body": "font-sans",
+          "fonts_to_import": "Cabinet Grotesk, Figtree",
+          "h1": "text-6xl md:text-8xl tracking-tight font-black uppercase",
+          "h2": "text-5xl md:text-6xl tracking-tight font-extrabold",
+          "h3": "text-2xl md:text-4xl font-bold",
+          "body": "text-lg leading-relaxed font-medium",
+          "uppercase_label": "text-sm font-bold uppercase tracking-widest text-[#0047FF]"
+        },
+        "layout": {
+          "spacing": "gap-8 md:gap-16",
+          "padding": "py-20",
+          "card": "bg-[#FFDF70] border-4 border-[#111111] p-8 rounded-3xl shadow-[8px_8px_0px_0px_rgba(17,17,17,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[6px_6px_0px_0px_rgba(17,17,17,1)] transition-all",
+          "image_radius": "rounded-3xl border-4 border-[#111111] shadow-[8px_8px_0px_0px_rgba(17,17,17,1)]",
+          "button": "rounded-full px-8 py-4 bg-[#FF4A8D] border-4 border-[#111111] shadow-[4px_4px_0px_0px_rgba(17,17,17,1)] text-[#111111] font-black uppercase hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(17,17,17,1)] transition-all"
+        },
+        "components": {
+          "marquee": "Giant outline text, overlapping the background, playful rotation",
+          "timeline": "Zig-zag path with solid black lines, circular nodes in pastel colors",
+          "stats": "Irregular bento grid (Tetris style), mixing yellow, pink, and white backgrounds with hard black borders"
+        }
+      }
+    },
+    {
+      "id": "variant-5",
+      "name": "Minimal Swiss",
+      "theme": "light",
+      "archetype": "Swiss & High-Contrast",
+      "design_tokens": {
+        "colors": {
+          "background": "bg-[#FFFFFF]",
+          "text": "text-[#000000]",
+          "text_muted": "text-[#666666]",
+          "primary": "bg-[#FF3333] text-[#FFFFFF]",
+          "border": "border-[#E5E5E5]",
+          "accent": "text-[#FF3333]"
+        },
+        "typography": {
+          "font_family_heading": "font-sans",
+          "font_family_body": "font-sans",
+          "fonts_to_import": "Clash Display, Satoshi",
+          "h1": "text-6xl md:text-7xl tracking-tight font-medium",
+          "h2": "text-4xl md:text-5xl tracking-tight",
+          "h3": "text-2xl md:text-3xl font-medium",
+          "body": "text-base md:text-lg leading-relaxed text-[#333333]",
+          "uppercase_label": "text-xs tracking-widest uppercase font-semibold"
+        },
+        "layout": {
+          "spacing": "gap-12 md:gap-24",
+          "padding": "py-24",
+          "card": "bg-[#F9F9F9] border-none p-10 rounded-none",
+          "image_radius": "rounded-none",
+          "button": "rounded-none px-8 py-4 bg-[#000000] text-[#FFFFFF] hover:bg-[#FF3333] transition-colors"
+        },
+        "components": {
+          "marquee": "Clean, tight geometric sans-serif, sharp alignment, monochromatic",
+          "timeline": "Left-aligned strict vertical axis, flush-left content blocks, high typographical hierarchy",
+          "stats": "Strict mathematical 12-column grid structure, flush-left text, negative space used instead of borders"
+        }
+      }
+    }
+  ]
+}
