@@ -41,6 +41,8 @@ function EditorialHero() {
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <a
               href={HERO.ctaPrimary.href}
+              target="_blank"
+              rel="noopener noreferrer"
               data-testid="hero-cta-primary"
               className="inline-flex items-center gap-3 px-8 py-4 rounded-full border transition-all hover:bg-[#1A2F24] hover:text-[#FDFBF7]"
               style={{ borderColor: "#1A2F24" }}
@@ -121,6 +123,8 @@ function BrutalismHero() {
             <div className="mt-10 flex flex-wrap gap-3 items-center">
               <a
                 href={HERO.ctaPrimary.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 data-testid="hero-cta-primary"
                 className="px-6 py-3 border-2 font-bold uppercase text-xs tracking-widest transition-all hover:bg-[#00FF41] hover:text-[#050505]"
                 style={{ borderColor: "#00FF41", color: "#00FF41" }}
@@ -221,6 +225,8 @@ function LuxuryHero() {
             <div className="mt-8 flex flex-wrap gap-4 items-center">
               <a
                 href={HERO.ctaPrimary.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 data-testid="hero-cta-primary"
                 className="px-8 py-4 rounded-full backdrop-blur-md border transition-all"
                 style={{
@@ -301,6 +307,8 @@ function PlayfulHero() {
             <div className="mt-8 flex flex-wrap gap-4">
               <a
                 href={HERO.ctaPrimary.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 data-testid="hero-cta-primary"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#FF4A8D] border-4 border-black text-black font-black uppercase tracking-wide shadow-[6px_6px_0_0_#111] hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-[3px_3px_0_0_#111] transition-all"
               >
@@ -389,6 +397,8 @@ function SwissHero() {
           <div className="mt-10 flex flex-wrap gap-4 items-center">
             <a
               href={HERO.ctaPrimary.href}
+              target="_blank"
+              rel="noopener noreferrer"
               data-testid="hero-cta-primary"
               className="inline-flex items-center gap-3 px-8 py-4 bg-black text-white hover:bg-[#FF3333] transition-colors"
             >
