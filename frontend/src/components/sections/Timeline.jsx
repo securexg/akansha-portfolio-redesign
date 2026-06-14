@@ -2,19 +2,13 @@ import React from "react";
 import { TIMELINE } from "../../lib/data";
 
 const PALETTE = {
-  editorial: { bg: "#FDFBF7", fg: "#1A2F24", muted: "#5C6B62", accent: "#9A3B26", border: "#E1DCD1", surface: "#F5F1E8" },
-  brutalism: { bg: "#050505", fg: "#E0E0E0", muted: "#888888", accent: "#00FF41", border: "#333333", surface: "#0A0A0A" },
-  luxury: { bg: "#0B0C10", fg: "#F8F8F8", muted: "#A0A0B0", accent: "#D4AF37", border: "rgba(255,255,255,0.10)", surface: "rgba(255,255,255,0.04)" },
   playful: { bg: "#F4F0EA", fg: "#111111", muted: "#444444", accent: "#FF4A8D", border: "#111111", surface: "#FFFFFF" },
-  swiss: { bg: "#FFFFFF", fg: "#000000", muted: "#666666", accent: "#FF3333", border: "#E5E5E5", surface: "#F9F9F9" },
+  google: { bg: "#FFFFFF", fg: "#202124", muted: "#5F6368", accent: "#4285F4", border: "#E8EAED", surface: "#F8F9FA" },
 };
 
 const HEAD_FONT = {
-  editorial: "font-serif",
-  brutalism: "font-mono",
-  luxury: "font-playfair",
   playful: "font-cabinet",
-  swiss: "font-clash",
+  google: "font-product-sans",
 };
 
 export default function Timeline({ variant }) {
@@ -37,7 +31,7 @@ export default function Timeline({ variant }) {
           </h2>
         </div>
 
-        {variant === "swiss" ? <SwissTL p={s} f={f} /> : variant === "playful" ? <PlayfulTL p={s} f={f} /> : variant === "brutalism" ? <BrutalismTL p={s} /> : <ClassicTL p={s} f={f} variant={variant} />}
+        {variant === "playful" ? <PlayfulTL p={s} f={f} /> : <ClassicTL p={s} f={f} variant={variant} />}
       </div>
     </section>
   );
@@ -77,32 +71,6 @@ function ClassicTL({ p, f, variant }) {
   );
 }
 
-function BrutalismTL({ p }) {
-  return (
-    <pre className="text-xs md:text-sm leading-relaxed overflow-x-auto" style={{ color: p.fg }}>
-      {TIMELINE.map((t, i) => (
-        <div key={t.year} className="mb-6 md:flex md:gap-6 border-l-2 pl-4" style={{ borderColor: p.accent }}>
-          <div className="md:w-32 shrink-0">
-            <div className="font-bold" style={{ color: p.accent }}>[{t.year}]</div>
-            <div className="text-[10px] opacity-60">log #{String(i + 1).padStart(3, "0")}</div>
-          </div>
-          <div className="flex-1">
-            <div className="uppercase font-bold mb-2" style={{ color: "#FFB000" }}>&gt; {t.title}</div>
-            <div className="whitespace-normal" style={{ color: p.muted }}>{t.body}</div>
-            <div className="mt-3 flex flex-wrap gap-2">
-              {t.badges.map((b) => (
-                <span key={b} className="text-[10px] uppercase px-2 py-1 border" style={{ borderColor: p.border, color: p.accent }}>
-                  ▸ {b}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      ))}
-    </pre>
-  );
-}
-
 function PlayfulTL({ p, f }) {
   const colors = ["#FFDF70", "#FF4A8D", "#0047FF", "#FFDF70", "#FF4A8D", "#0047FF"];
   return (
@@ -129,31 +97,3 @@ function PlayfulTL({ p, f }) {
   );
 }
 
-function SwissTL({ p, f }) {
-  return (
-    <ul className="border-t" style={{ borderColor: p.border }}>
-      {TIMELINE.map((t) => (
-        <li key={t.year} className="grid grid-cols-12 gap-4 py-10 border-b" style={{ borderColor: p.border }}>
-          <div className={`${f} col-span-12 md:col-span-2 text-4xl md:text-5xl font-medium`} style={{ color: "#000" }}>
-            {t.year}
-          </div>
-          <div className="col-span-12 md:col-span-3">
-            <h3 className={`${f} text-xl md:text-2xl font-medium`}>{t.title}</h3>
-          </div>
-          <div className="col-span-12 md:col-span-5">
-            <p className="text-base leading-relaxed" style={{ color: p.muted }}>{t.body}</p>
-          </div>
-          <div className="col-span-12 md:col-span-2">
-            <div className="flex flex-wrap gap-1">
-              {t.badges.map((b) => (
-                <span key={b} className="text-[10px] uppercase tracking-widest border px-2 py-1" style={{ borderColor: p.border }}>
-                  {b}
-                </span>
-              ))}
-            </div>
-          </div>
-        </li>
-      ))}
-    </ul>
-  );
-}

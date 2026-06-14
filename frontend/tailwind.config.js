@@ -14,6 +14,8 @@ module.exports = {
                 figtree: ['"Figtree"', 'system-ui', 'sans-serif'],
                 clash: ['"Clash Display"', 'system-ui', 'sans-serif'],
                 satoshi: ['"Satoshi"', 'system-ui', 'sans-serif'],
+                'product-sans': ['"Google Sans"', '"Product Sans"', 'system-ui', 'sans-serif'],
+                roboto: ['"Roboto"', 'system-ui', 'sans-serif'],
             },
             borderRadius: {
                 lg: 'var(--radius)',

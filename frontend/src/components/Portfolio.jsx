@@ -12,7 +12,7 @@ const STORAGE_KEY = "akansha-redesign-variant";
 export default function Portfolio() {
   const [variant, setVariant] = React.useState(() => {
     if (typeof window === "undefined") return "editorial";
-    return window.localStorage.getItem(STORAGE_KEY) || "editorial";
+    return window.localStorage.getItem(STORAGE_KEY) || "playful";
   });
 
   const handleChange = (v) => {

@@ -1,80 +1,25 @@
 // Variant metadata for the switcher
 export const VARIANTS = [
   {
-    id: "editorial",
-    num: "01",
-    name: "Editorial Magazine",
-    desc: "Serif, asymmetric, warm linen",
-    swatch: ["#FDFBF7", "#1A2F24", "#9A3B26"],
-    theme: "light",
-  },
-  {
-    id: "brutalism",
-    num: "02",
-    name: "Code Brutalism",
-    desc: "Monospace terminal, neon green",
-    swatch: ["#050505", "#E0E0E0", "#00FF41"],
-    theme: "dark",
-  },
-  {
-    id: "luxury",
-    num: "03",
-    name: "Dark Luxury",
-    desc: "Playfair, glass, metallic gold",
-    swatch: ["#0B0C10", "#F8F8F8", "#D4AF37"],
-    theme: "dark",
-  },
-  {
     id: "playful",
-    num: "04",
+    num: "01",
     name: "Playful Creative",
     desc: "Neobrutalist cards, hard shadows",
     swatch: ["#F4F0EA", "#FFDF70", "#FF4A8D"],
     theme: "light",
   },
   {
-    id: "swiss",
-    num: "05",
-    name: "Minimal Swiss",
-    desc: "Strict grid, restrained, red accent",
-    swatch: ["#FFFFFF", "#000000", "#FF3333"],
+    id: "google",
+    num: "02",
+    name: "Google Brand",
+    desc: "Material Design, colorful, clean",
+    swatch: ["#4285F4", "#EA4335", "#FBBC05"],
     theme: "light",
   },
 ];
 
 // Theme tokens lookup; consumed via useVariantTokens()
 const TOKENS = {
-  editorial: {
-    bg: "#FDFBF7",
-    fg: "#1A2F24",
-    muted: "#5C6B62",
-    accent: "#9A3B26",
-    border: "#E1DCD1",
-    surface: "#F5F1E8",
-    fontHead: "font-serif",
-    fontBody: "font-sans",
-  },
-  brutalism: {
-    bg: "#050505",
-    fg: "#E0E0E0",
-    muted: "#888888",
-    accent: "#00FF41",
-    accent2: "#FFB000",
-    border: "#333333",
-    surface: "#0A0A0A",
-    fontHead: "font-mono",
-    fontBody: "font-mono",
-  },
-  luxury: {
-    bg: "#0B0C10",
-    fg: "#F8F8F8",
-    muted: "#A0A0B0",
-    accent: "#D4AF37",
-    border: "rgba(255,255,255,0.10)",
-    surface: "rgba(255,255,255,0.04)",
-    fontHead: "font-playfair",
-    fontBody: "font-manrope",
-  },
   playful: {
     bg: "#F4F0EA",
     fg: "#111111",
@@ -87,16 +32,19 @@ const TOKENS = {
     fontHead: "font-cabinet",
     fontBody: "font-figtree",
   },
-  swiss: {
+  google: {
     bg: "#FFFFFF",
-    fg: "#000000",
-    muted: "#666666",
-    accent: "#FF3333",
-    border: "#E5E5E5",
-    surface: "#F9F9F9",
-    fontHead: "font-clash",
-    fontBody: "font-satoshi",
+    fg: "#202124",
+    muted: "#5F6368",
+    accent: "#4285F4",
+    accent2: "#EA4335",
+    accent3: "#FBBC05",
+    accent4: "#34A853",
+    border: "#DADCE0",
+    surface: "#F8F9FA",
+    fontHead: "font-product-sans",
+    fontBody: "font-roboto",
   },
 };
 
-export const getTokens = (variantId) => TOKENS[variantId] || TOKENS.editorial;
+export const getTokens = (variantId) => TOKENS[variantId] || TOKENS.playful;

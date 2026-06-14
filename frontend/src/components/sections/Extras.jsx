@@ -2,14 +2,11 @@ import React from "react";
 import { CODELABS, LEADERSHIP, CONTACT } from "../../lib/data";
 
 const P = {
-  editorial: { bg: "#FDFBF7", fg: "#1A2F24", muted: "#5C6B62", accent: "#9A3B26", border: "#E1DCD1", surface: "#F5F1E8" },
-  brutalism: { bg: "#050505", fg: "#E0E0E0", muted: "#888888", accent: "#00FF41", border: "#333333", surface: "#0A0A0A" },
-  luxury: { bg: "#0B0C10", fg: "#F8F8F8", muted: "#A0A0B0", accent: "#D4AF37", border: "rgba(255,255,255,0.10)", surface: "rgba(255,255,255,0.04)" },
   playful: { bg: "#F4F0EA", fg: "#111111", muted: "#444444", accent: "#FF4A8D", border: "#111111", surface: "#FFFFFF" },
-  swiss: { bg: "#FFFFFF", fg: "#000000", muted: "#666666", accent: "#FF3333", border: "#E5E5E5", surface: "#F9F9F9" },
+  google: { bg: "#FFFFFF", fg: "#202124", muted: "#5F6368", accent: "#4285F4", border: "#E8EAED", surface: "#F8F9FA" },
 };
 
-const F = { editorial: "font-serif", brutalism: "font-mono", luxury: "font-playfair", playful: "font-cabinet", swiss: "font-clash" };
+const F = { playful: "font-cabinet", google: "font-product-sans" };
 
 /* ============================== CODELABS ============================== */
 export function Codelabs({ variant }) {
@@ -46,10 +43,12 @@ export function Codelabs({ variant }) {
                   ? "p-8 rounded-2xl backdrop-blur-xl border"
                   : variant === "swiss"
                   ? "p-10"
+                  : variant === "google"
+                  ? "p-8 rounded-2xl border google-shadow hover:google-shadow-lg transition-all"
                   : "p-8 border rounded-2xl"
               }
               style={{
-                backgroundColor: variant === "swiss" || variant === "brutalism" ? s.surface : variant === "luxury" ? s.surface : variant === "editorial" ? s.surface : undefined,
+                backgroundColor: variant === "swiss" || variant === "brutalism" || variant === "google" ? s.surface : variant === "luxury" ? s.surface : variant === "editorial" ? s.surface : undefined,
                 borderColor: s.border,
               }}
               data-testid={`codelab-${c.no}`}

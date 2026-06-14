@@ -4,19 +4,13 @@ import { SELECTED_TALKS, FEATURED_TALK, ARCHIVE } from "../../lib/data";
 /* Section wrapper that adapts to variant */
 function SectionShell({ variant, eyebrow, title, sub, children, id }) {
   const styles = {
-    editorial: { bg: "#FDFBF7", fg: "#1A2F24", muted: "#5C6B62", accent: "#9A3B26" },
-    brutalism: { bg: "#050505", fg: "#E0E0E0", muted: "#888888", accent: "#00FF41" },
-    luxury: { bg: "#0B0C10", fg: "#F8F8F8", muted: "#A0A0B0", accent: "#D4AF37" },
     playful: { bg: "#F4F0EA", fg: "#111111", muted: "#444444", accent: "#FF4A8D" },
-    swiss: { bg: "#FFFFFF", fg: "#000000", muted: "#666666", accent: "#FF3333" },
+    google: { bg: "#FFFFFF", fg: "#202124", muted: "#5F6368", accent: "#4285F4" },
   }[variant];
 
   const headerFont = {
-    editorial: "font-serif",
-    brutalism: "font-mono",
-    luxury: "font-playfair",
     playful: "font-cabinet",
-    swiss: "font-clash",
+    google: "font-product-sans",
   }[variant];
 
   return (
@@ -64,27 +58,18 @@ export function SelectedTalks({ variant }) {
 
 function TalkCard({ talk, variant }) {
   const baseHeading = {
-    editorial: "font-serif text-2xl md:text-3xl font-medium leading-snug",
-    brutalism: "font-mono text-lg md:text-xl uppercase font-bold leading-snug",
-    luxury: "font-playfair text-2xl md:text-3xl leading-snug",
     playful: "font-cabinet text-2xl md:text-3xl font-black uppercase leading-tight",
-    swiss: "font-clash text-2xl md:text-3xl font-medium leading-snug",
+    google: "font-product-sans text-2xl md:text-3xl font-medium leading-snug",
   }[variant];
 
   const cardCls = {
-    editorial: "bg-transparent border-t pt-6 pb-8",
-    brutalism: "border p-6 hover:border-[#00FF41] transition-colors",
-    luxury: "p-7 rounded-2xl backdrop-blur-xl border",
     playful: "p-7 rounded-3xl border-4 border-black shadow-[8px_8px_0_0_#111] hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-[5px_5px_0_0_#111] transition-all",
-    swiss: "p-8",
+    google: "p-6 rounded-2xl border google-shadow hover:google-shadow-lg transition-all",
   }[variant];
 
   const styles = {
-    editorial: { borderColor: "#E1DCD1", color: "#1A2F24", muted: "#5C6B62", accent: "#9A3B26", bg: "transparent" },
-    brutalism: { borderColor: "#333333", color: "#E0E0E0", muted: "#888888", accent: "#00FF41", bg: "#0A0A0A" },
-    luxury: { borderColor: "rgba(255,255,255,0.10)", color: "#F8F8F8", muted: "#A0A0B0", accent: "#D4AF37", bg: "rgba(255,255,255,0.04)" },
     playful: { borderColor: "#111", color: "#111", muted: "#444", accent: "#0047FF", bg: "#FFFFFF" },
-    swiss: { borderColor: "#E5E5E5", color: "#000", muted: "#666", accent: "#FF3333", bg: "#F9F9F9" },
+    google: { borderColor: "#E8EAED", color: "#202124", muted: "#5F6368", accent: "#4285F4", bg: "#F8F9FA" },
   }[variant];
 
   return (
@@ -129,19 +114,13 @@ function TalkCard({ talk, variant }) {
 /* ============================== FEATURED TALK ============================== */
 export function FeaturedTalk({ variant }) {
   const styles = {
-    editorial: { bg: "#1A2F24", fg: "#FDFBF7", accent: "#FFCBA4" },
-    brutalism: { bg: "#0A0A0A", fg: "#E0E0E0", accent: "#00FF41" },
-    luxury: { bg: "#0B0C10", fg: "#F8F8F8", accent: "#D4AF37" },
     playful: { bg: "#0047FF", fg: "#FFFFFF", accent: "#FFDF70" },
-    swiss: { bg: "#000000", fg: "#FFFFFF", accent: "#FF3333" },
+    google: { bg: "#F8F9FA", fg: "#202124", accent: "#4285F4" },
   }[variant];
 
   const head = {
-    editorial: "font-serif text-4xl md:text-6xl leading-tight font-light",
-    brutalism: "font-mono text-3xl md:text-5xl uppercase font-bold leading-tight",
-    luxury: "font-playfair text-4xl md:text-6xl leading-tight",
     playful: "font-cabinet text-4xl md:text-7xl uppercase font-black leading-[0.95]",
-    swiss: "font-clash text-4xl md:text-6xl leading-tight font-medium",
+    google: "font-product-sans text-4xl md:text-6xl leading-tight font-medium",
   }[variant];
 
   return (
@@ -194,11 +173,8 @@ export function Archive({ variant }) {
   const filtered = ARCHIVE.items.filter((it) => active === "All" || it.cats.includes(active));
 
   const styles = {
-    editorial: { bg: "#FDFBF7", fg: "#1A2F24", muted: "#5C6B62", accent: "#9A3B26", border: "#E1DCD1", surface: "#F5F1E8" },
-    brutalism: { bg: "#050505", fg: "#E0E0E0", muted: "#888888", accent: "#00FF41", border: "#333333", surface: "#0A0A0A" },
-    luxury: { bg: "#0B0C10", fg: "#F8F8F8", muted: "#A0A0B0", accent: "#D4AF37", border: "rgba(255,255,255,0.10)", surface: "rgba(255,255,255,0.04)" },
     playful: { bg: "#F4F0EA", fg: "#111111", muted: "#444444", accent: "#FF4A8D", border: "#111111", surface: "#FFFFFF" },
-    swiss: { bg: "#FFFFFF", fg: "#000000", muted: "#666666", accent: "#FF3333", border: "#E5E5E5", surface: "#F9F9F9" },
+    google: { bg: "#FFFFFF", fg: "#202124", muted: "#5F6368", accent: "#4285F4", border: "#E8EAED", surface: "#F8F9FA" },
   }[variant];
 
   return (

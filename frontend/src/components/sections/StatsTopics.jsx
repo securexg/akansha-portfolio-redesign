@@ -2,14 +2,11 @@ import React from "react";
 import { STATS_BIG, TOPICS } from "../../lib/data";
 
 const P = {
-  editorial: { bg: "#FDFBF7", fg: "#1A2F24", muted: "#5C6B62", accent: "#9A3B26", border: "#E1DCD1", surface: "#F5F1E8" },
-  brutalism: { bg: "#050505", fg: "#E0E0E0", muted: "#888888", accent: "#00FF41", border: "#333333", surface: "#0A0A0A" },
-  luxury: { bg: "#0B0C10", fg: "#F8F8F8", muted: "#A0A0B0", accent: "#D4AF37", border: "rgba(255,255,255,0.10)", surface: "rgba(255,255,255,0.04)" },
   playful: { bg: "#F4F0EA", fg: "#111111", muted: "#444444", accent: "#FF4A8D", border: "#111111", surface: "#FFFFFF" },
-  swiss: { bg: "#FFFFFF", fg: "#000000", muted: "#666666", accent: "#FF3333", border: "#E5E5E5", surface: "#F9F9F9" },
+  google: { bg: "#FFFFFF", fg: "#202124", muted: "#5F6368", accent: "#4285F4", border: "#E8EAED", surface: "#F8F9FA" },
 };
 
-const F = { editorial: "font-serif", brutalism: "font-mono", luxury: "font-playfair", playful: "font-cabinet", swiss: "font-clash" };
+const F = { playful: "font-cabinet", google: "font-product-sans" };
 
 export function Stats({ variant }) {
   const s = P[variant];
@@ -28,7 +25,7 @@ export function Stats({ variant }) {
           </h2>
         </div>
 
-        {variant === "playful" ? <PlayfulStats /> : variant === "brutalism" ? <BrutalismStats s={s} /> : variant === "swiss" ? <SwissStats s={s} f={f} /> : <ClassicStats s={s} f={f} />}
+        {variant === "playful" ? <PlayfulStats /> : <ClassicStats s={s} f={f} />}
       </div>
     </section>
   );
@@ -43,20 +40,6 @@ function ClassicStats({ s, f }) {
             {it.value}
           </div>
           <div className="mt-3 text-xs uppercase tracking-[0.25em]" style={{ color: s.muted }}>{it.label}</div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-function BrutalismStats({ s }) {
-  return (
-    <div className="grid grid-cols-2 md:grid-cols-3 border" style={{ borderColor: s.border }}>
-      {STATS_BIG.map((it, i) => (
-        <div key={it.label} className="p-6 border-r border-b last:border-r-0" style={{ borderColor: s.border }}>
-          <div className="text-[10px] uppercase tracking-widest mb-2" style={{ color: "#FFB000" }}>STAT_{String(i + 1).padStart(2, "0")}</div>
-          <div className="font-mono text-4xl md:text-6xl font-bold" style={{ color: s.accent }}>{it.value}</div>
-          <div className="mt-2 text-xs uppercase tracking-widest" style={{ color: s.muted }}>▸ {it.label}</div>
         </div>
       ))}
     </div>
@@ -88,39 +71,19 @@ function PlayfulStats() {
   );
 }
 
-function SwissStats({ s, f }) {
-  return (
-    <div className="grid grid-cols-12 gap-x-4 border-t" style={{ borderColor: s.border }}>
-      {STATS_BIG.map((it, i) => (
-        <div key={it.label} className={`col-span-12 md:col-span-4 py-8 ${i % 3 !== 0 ? "md:border-l md:pl-6" : "md:pr-6"} border-b md:border-b-0`} style={{ borderColor: s.border }}>
-          <div className="text-[10px] uppercase tracking-[0.25em]" style={{ color: s.muted }}>0{i + 1}</div>
-          <div className={`${f} text-5xl md:text-7xl font-medium mt-3`}>{it.value}</div>
-          <div className="mt-2 text-sm" style={{ color: s.muted }}>{it.label}</div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
 /* ============================== TOPICS ============================== */
 export function Topics({ variant }) {
   const s = P[variant];
   const f = F[variant];
 
   const chipCls = {
-    editorial: "rounded-full border px-5 py-2.5 text-sm transition hover:bg-[#9A3B26] hover:text-white",
-    brutalism: "border px-4 py-2 text-xs uppercase tracking-widest font-mono transition hover:border-[#00FF41] hover:text-[#00FF41]",
-    luxury: "rounded-full border px-5 py-2.5 text-sm font-light backdrop-blur-md transition hover:border-[#D4AF37] hover:text-[#D4AF37]",
     playful: "rounded-full border-4 border-black px-5 py-2.5 text-sm font-black uppercase bg-white text-black shadow-[4px_4px_0_0_#111] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_0_#111] hover:bg-[#FFDF70] transition-all",
-    swiss: "border px-5 py-2.5 text-sm uppercase tracking-wider hover:border-black transition",
+    google: "rounded-full border px-5 py-2.5 text-sm font-medium google-shadow hover:google-shadow-lg transition-all",
   }[variant];
 
   const chipStyle = {
-    editorial: { borderColor: s.border, color: s.fg },
-    brutalism: { borderColor: s.border, color: s.fg },
-    luxury: { borderColor: s.border, color: s.fg, background: s.surface },
     playful: {},
-    swiss: { borderColor: s.border, color: s.fg },
+    google: { borderColor: s.border, color: s.fg, backgroundColor: s.surface },
   }[variant];
 
   return (

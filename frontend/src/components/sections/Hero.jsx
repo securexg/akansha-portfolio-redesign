@@ -1,6 +1,5 @@
 import React from "react";
 import { HERO, MEDIA } from "../../lib/data";
-import { motion } from "framer-motion";
 
 // Rotating multilingual greeting used across variants
 function RotatingGreeting({ className = "" }) {
@@ -13,259 +12,6 @@ function RotatingGreeting({ className = "" }) {
     <span className={className} data-testid="rotating-greeting">
       {HERO.greetings[i]}
     </span>
-  );
-}
-
-/* ============================== EDITORIAL ============================== */
-function EditorialHero() {
-  return (
-    <section
-      id="hero"
-      className="relative min-h-screen pt-28 pb-20 px-6 md:px-16 grain-overlay overflow-hidden"
-      style={{ backgroundColor: "#FDFBF7", color: "#1A2F24" }}
-    >
-      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-end">
-        <div className="md:col-span-7">
-          <div className="text-xs tracking-[0.3em] uppercase mb-8" style={{ color: "#5C6B62" }}>
-            <RotatingGreeting /> — Issue 01 · The Speaker Edition
-          </div>
-          <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[8rem] leading-[0.95] tracking-tight font-light">
-            Engineering<br />
-            <em className="italic font-medium" style={{ color: "#9A3B26" }}>code.</em><br />
-            Inspiring<br />
-            <em className="italic font-medium">communities.</em>
-          </h1>
-          <p className="mt-10 max-w-xl text-base md:text-lg leading-relaxed" style={{ color: "#5C6B62" }}>
-            {HERO.subtitle}
-          </p>
-          <div className="mt-10 flex flex-wrap items-center gap-4">
-            <a
-              href={HERO.ctaPrimary.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-testid="hero-cta-primary"
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full border transition-all hover:bg-[#1A2F24] hover:text-[#FDFBF7]"
-              style={{ borderColor: "#1A2F24" }}
-            >
-              {HERO.ctaPrimary.label}
-              <span aria-hidden>→</span>
-            </a>
-            <span className="text-xs uppercase tracking-[0.25em]" style={{ color: "#5C6B62" }}>
-              {HERO.role}
-            </span>
-          </div>
-        </div>
-
-        <div className="md:col-span-5 relative">
-          <div className="relative overflow-hidden rounded-[10rem] md:rounded-[12rem]" style={{ aspectRatio: "3/4" }}>
-            <img
-              src={MEDIA.headshot}
-              alt="Akansha Jain"
-              className="w-full h-full object-cover"
-              style={{ filter: "saturate(0.85) contrast(1.05)" }}
-            />
-          </div>
-          <div className="absolute -bottom-6 -left-6 bg-[#FDFBF7] border border-[#E1DCD1] rounded-full px-5 py-3 text-xs uppercase tracking-[0.25em]">
-            Akansha Jain
-          </div>
-        </div>
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto mt-24 md:mt-32 grid grid-cols-3 gap-6 md:gap-12 border-t pt-10" style={{ borderColor: "#E1DCD1" }}>
-        {HERO.stats.map((s) => (
-          <div key={s.label}>
-            <div className="font-serif text-5xl md:text-7xl font-light leading-none" style={{ color: "#9A3B26" }}>
-              {s.value}
-            </div>
-            <div className="mt-3 text-xs uppercase tracking-[0.3em]" style={{ color: "#5C6B62" }}>
-              {s.label}
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-/* ============================== BRUTALISM ============================== */
-function BrutalismHero() {
-  return (
-    <section
-      id="hero"
-      className="relative min-h-screen pt-28 pb-16 px-6 md:px-12 font-mono scanlines"
-      style={{ backgroundColor: "#050505", color: "#E0E0E0" }}
-    >
-      <div className="relative z-10 max-w-7xl mx-auto">
-        <div className="text-xs mb-8" style={{ color: "#00FF41" }}>
-          <span className="opacity-60">$</span> whoami{" "}
-          <span className="animate-blink">▊</span>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-          <div className="md:col-span-8">
-            <pre className="text-[10px] sm:text-xs mb-6 leading-tight" style={{ color: "#FFB000" }}>
-{`// >> AKANSHA_JAIN.exe — runtime: 5y
-// >> status: ONLINE
-// >> region: GLOBAL`}
-            </pre>
-
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold uppercase tracking-tight leading-[1.02]">
-              <span style={{ color: "#00FF41" }}>&gt;</span> Engineering_code.
-              <br />
-              <span style={{ color: "#FFB000" }}>&gt;</span> Inspiring_communities.
-            </h1>
-
-            <p className="mt-8 max-w-2xl text-sm md:text-base leading-relaxed" style={{ color: "#888888" }}>
-              <span style={{ color: "#00FF41" }}>// </span>
-              {HERO.subtitle}
-            </p>
-
-            <div className="mt-10 flex flex-wrap gap-3 items-center">
-              <a
-                href={HERO.ctaPrimary.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-testid="hero-cta-primary"
-                className="px-6 py-3 border-2 font-bold uppercase text-xs tracking-widest transition-all hover:bg-[#00FF41] hover:text-[#050505]"
-                style={{ borderColor: "#00FF41", color: "#00FF41" }}
-              >
-                {`[ ${HERO.ctaPrimary.label} ]`}
-              </a>
-              <span className="text-xs uppercase tracking-widest" style={{ color: "#888888" }}>
-                <RotatingGreeting className="mr-2" style={{ color: "#FFB000" }} />
-                · {HERO.role}
-              </span>
-            </div>
-          </div>
-
-          <div className="md:col-span-4">
-            <div className="border-2 p-2" style={{ borderColor: "#333333" }}>
-              <div className="text-[10px] uppercase tracking-widest mb-2 flex items-center justify-between" style={{ color: "#00FF41" }}>
-                <span>► headshot.png</span><span>200x267</span>
-              </div>
-              <img
-                src={MEDIA.headshot}
-                alt="Akansha Jain"
-                className="w-full h-auto grayscale hover:grayscale-0 transition-all"
-              />
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-16 grid grid-cols-3 border" style={{ borderColor: "#333333" }}>
-          {HERO.stats.map((s, i) => (
-            <div
-              key={s.label}
-              className={`p-5 ${i < 2 ? "border-r" : ""}`}
-              style={{ borderColor: "#333333" }}
-            >
-              <div className="text-3xl md:text-5xl font-bold" style={{ color: "#00FF41" }}>
-                {s.value}
-              </div>
-              <div className="mt-2 text-[10px] uppercase tracking-widest" style={{ color: "#888888" }}>
-                ▸ {s.label}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ============================== LUXURY ============================== */
-function LuxuryHero() {
-  return (
-    <section
-      id="hero"
-      className="relative min-h-screen pt-28 pb-24 px-6 md:px-16 overflow-hidden"
-      style={{ backgroundColor: "#0B0C10", color: "#F8F8F8" }}
-    >
-      <div
-        className="absolute inset-0 pointer-events-none opacity-50"
-        style={{
-          background:
-            "radial-gradient(60% 50% at 75% 30%, rgba(212,175,55,0.18), transparent 70%), radial-gradient(50% 50% at 10% 80%, rgba(212,175,55,0.10), transparent 70%)",
-        }}
-      />
-      <div className="relative z-10 max-w-7xl mx-auto">
-        <div className="text-xs tracking-[0.3em] uppercase mb-10" style={{ color: "#D4AF37" }}>
-          <RotatingGreeting /> · Speaker · Engineer · Community
-        </div>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="font-playfair text-6xl sm:text-7xl md:text-[8rem] leading-[0.95] tracking-tight font-medium text-center"
-        >
-          Engineering code.
-          <br />
-          <span className="italic" style={{ color: "#D4AF37" }}>Inspiring</span> communities.
-        </motion.h1>
-
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
-          <div className="md:col-span-4 md:col-start-2">
-            <div
-              className="relative rounded-2xl overflow-hidden border"
-              style={{ borderColor: "rgba(255,255,255,0.10)" }}
-            >
-              <img src={MEDIA.headshot} alt="Akansha Jain" className="w-full h-auto" />
-              <div
-                className="absolute inset-0"
-                style={{ background: "linear-gradient(to top, rgba(11,12,16,0.6), transparent 60%)" }}
-              />
-            </div>
-          </div>
-
-          <div className="md:col-span-6">
-            <p className="font-manrope text-base md:text-xl font-light leading-relaxed" style={{ color: "#D0D0E0" }}>
-              {HERO.subtitle}
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4 items-center">
-              <a
-                href={HERO.ctaPrimary.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-testid="hero-cta-primary"
-                className="px-8 py-4 rounded-full backdrop-blur-md border transition-all"
-                style={{
-                  borderColor: "rgba(255,255,255,0.20)",
-                  background: "rgba(255,255,255,0.06)",
-                  color: "#F8F8F8",
-                }}
-              >
-                {HERO.ctaPrimary.label}
-                <span className="ml-2">↗</span>
-              </a>
-              <span className="text-[11px] tracking-[0.3em] uppercase" style={{ color: "#D4AF37" }}>
-                Available · 2026
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-20 grid grid-cols-3 gap-3 md:gap-6">
-          {HERO.stats.map((s) => (
-            <div
-              key={s.label}
-              className="p-6 rounded-2xl backdrop-blur-xl border"
-              style={{
-                borderColor: "rgba(255,255,255,0.10)",
-                background: "rgba(255,255,255,0.04)",
-              }}
-            >
-              <div className="font-playfair text-4xl md:text-6xl font-medium" style={{ color: "#D4AF37" }}>
-                {s.value}
-              </div>
-              <div className="mt-3 text-[11px] tracking-[0.25em] uppercase" style={{ color: "#A0A0B0" }}>
-                {s.label}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
   );
 }
 
@@ -358,80 +104,87 @@ function PlayfulHero() {
   );
 }
 
-/* ============================== SWISS ============================== */
-function SwissHero() {
+/* ============================== GOOGLE ============================== */
+function GoogleHero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen pt-28 pb-20 px-6 md:px-12 font-satoshi"
-      style={{ backgroundColor: "#FFFFFF", color: "#000000" }}
+      className="relative min-h-screen pt-28 pb-20 px-6 md:px-12 font-roboto"
+      style={{ backgroundColor: "#FFFFFF", color: "#202124" }}
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-12 gap-x-4 gap-y-12">
-        {/* col labels */}
-        <div className="col-span-12 grid grid-cols-12 text-[10px] uppercase tracking-[0.25em] pb-4 border-b" style={{ color: "#666", borderColor: "#E5E5E5" }}>
-          <div className="col-span-2">A · Identity</div>
-          <div className="col-span-6">B · Statement</div>
-          <div className="col-span-4 text-right">C · Index 2026/I</div>
-        </div>
-
-        <div className="col-span-12 md:col-span-2">
-          <div className="text-xs tracking-widest uppercase font-semibold">Akansha Jain</div>
-          <div className="mt-2 text-xs" style={{ color: "#666" }}>
-            Speaker. Engineer.<br />Community Builder.
+      <div className="max-w-7xl mx-auto">
+        {/* Google-style header */}
+        <div className="flex items-center gap-3 mb-8">
+          <div className="flex gap-1">
+            <div className="w-3 h-3 rounded-full bg-[#4285F4]" />
+            <div className="w-3 h-3 rounded-full bg-[#EA4335]" />
+            <div className="w-3 h-3 rounded-full bg-[#FBBC05]" />
+            <div className="w-3 h-3 rounded-full bg-[#34A853]" />
           </div>
-          <div className="mt-6 text-xs" style={{ color: "#666" }}>
-            <RotatingGreeting />
+          <div className="text-sm font-medium" style={{ color: "#5F6368" }}>
+            <RotatingGreeting /> · Speaker · Engineer · Community
           </div>
         </div>
 
-        <div className="col-span-12 md:col-span-7">
-          <h1 className="font-clash text-6xl sm:text-7xl md:text-8xl leading-[0.92] tracking-tight font-medium">
-            Engineering code.<br />
-            Inspiring<br />
-            communities<span style={{ color: "#FF3333" }}>.</span>
-          </h1>
-          <p className="mt-10 max-w-2xl text-base md:text-lg leading-relaxed" style={{ color: "#333" }}>
-            {HERO.subtitle}
-          </p>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+          <div className="md:col-span-7">
+            <h1 className="font-product-sans text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-medium leading-[1.1] tracking-tight">
+              Engineering code.<br />
+              <span style={{ color: "#4285F4" }}>Inspiring</span> communities.
+            </h1>
+            <p className="mt-8 text-lg md:text-xl leading-relaxed max-w-2xl" style={{ color: "#5F6368" }}>
+              {HERO.subtitle}
+            </p>
 
-          <div className="mt-10 flex flex-wrap gap-4 items-center">
-            <a
-              href={HERO.ctaPrimary.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-testid="hero-cta-primary"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-black text-white hover:bg-[#FF3333] transition-colors"
-            >
-              {HERO.ctaPrimary.label}
-              <span>↗</span>
-            </a>
-            <a href="#talks" className="text-sm underline underline-offset-4 hover:text-[#FF3333]">
-              View selected talks
-            </a>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <a
+                href={HERO.ctaPrimary.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="hero-cta-primary"
+                className="material-ripple inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#4285F4] text-white font-medium hover:bg-[#3367D6] transition-colors google-shadow"
+              >
+                {HERO.ctaPrimary.label}
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </a>
+              <a
+                href="#talks"
+                className="material-ripple inline-flex items-center gap-2 px-8 py-4 rounded-full border-2 font-medium hover:bg-gray-50 transition-colors"
+                style={{ borderColor: "#DADCE0", color: "#4285F4" }}
+              >
+                View talks
+              </a>
+            </div>
+          </div>
+
+          <div className="md:col-span-5 md:justify-self-end">
+            <div className="relative">
+              <div className="absolute inset-0 google-gradient opacity-10 rounded-2xl blur-2xl" />
+              <img
+                src={MEDIA.headshot}
+                alt="Akansha Jain"
+                className="relative w-full max-w-[400px] h-auto rounded-2xl google-shadow-lg"
+              />
+            </div>
           </div>
         </div>
 
-        <div className="col-span-12 md:col-span-3 md:justify-self-end">
-          <img
-            src={MEDIA.headshot}
-            alt="Akansha Jain"
-            className="w-full max-w-[300px] h-auto"
-            style={{ filter: "grayscale(0.05)" }}
-          />
-          <div className="mt-3 text-[10px] uppercase tracking-[0.25em]" style={{ color: "#666" }}>
-            Fig. 01 — Headshot
-          </div>
-        </div>
-
-        {/* Stats row */}
-        <div className="col-span-12 grid grid-cols-12 gap-x-4 border-t pt-10" style={{ borderColor: "#E5E5E5" }}>
+        {/* Material Design cards for stats */}
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6">
           {HERO.stats.map((s, i) => (
-            <div key={s.label} className={`col-span-4 ${i > 0 ? "border-l pl-6" : "pr-6"}`} style={{ borderColor: "#E5E5E5" }}>
-              <div className="text-[10px] uppercase tracking-[0.25em]" style={{ color: "#666" }}>
-                0{i + 1}
+            <div
+              key={s.label}
+              className="p-6 rounded-2xl border google-shadow hover:google-shadow-lg transition-all"
+              style={{ backgroundColor: "#F8F9FA", borderColor: "#E8EAED" }}
+            >
+              <div className="font-product-sans text-5xl md:text-6xl font-medium" style={{ color: i === 0 ? "#4285F4" : i === 1 ? "#EA4335" : "#FBBC05" }}>
+                {s.value}
               </div>
-              <div className="font-clash text-5xl md:text-7xl font-medium mt-2">{s.value}</div>
-              <div className="mt-3 text-sm" style={{ color: "#333" }}>{s.label}</div>
+              <div className="mt-3 text-sm font-medium uppercase tracking-wider" style={{ color: "#5F6368" }}>
+                {s.label}
+              </div>
             </div>
           ))}
         </div>
@@ -441,9 +194,6 @@ function SwissHero() {
 }
 
 export default function Hero({ variant }) {
-  if (variant === "brutalism") return <BrutalismHero />;
-  if (variant === "luxury") return <LuxuryHero />;
-  if (variant === "playful") return <PlayfulHero />;
-  if (variant === "swiss") return <SwissHero />;
-  return <EditorialHero />;
+  if (variant === "google") return <GoogleHero />;
+  return <PlayfulHero />;
 }
